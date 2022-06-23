@@ -1,0 +1,78 @@
+.button {
+    @include reset-button;
+    border-radius: 40px;
+    background-color: transparent;
+    transition: all .5s ease;
+    display: block;
+    padding: 15px 33px;
+    font-size: 10px;
+    line-height: 1.6;
+    font-weight: 600;
+    color: #ffffff;
+      &:hover {
+        color: #ffffff;
+        text-decoration: none;
+          & .button__content span {
+            // transform: translateX(3px);
+            transition: all .5s ease;
+            margin-left: 3px;
+          }
+          & .button__content b {
+            transition: all .5s ease;
+            margin-right: 3px;
+          }
+      }
+      &--green {
+        background-color: $green;
+          &:hover {
+            background-color: lighten($green, 5%);
+          }
+      }
+      &--orange {
+        background-color: $accent;
+          &:hover {
+            background-color: lighten($accent, 5%);
+          }
+      }
+}
+
+.button__content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // transition: all .5s ease;
+    & span {
+      width: 185px;
+      transition: all .5s ease;
+    }
+    & b {
+      position: relative;
+      width: 19px;
+      height: 2px;
+      background-color: #fff;
+      transform: rotate(-45deg);
+      transition: all .5s ease;
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          width: 7px;
+          height: 2px;
+          background-color: #fff;
+        }
+        &::before {
+          top: -2px;
+          right: -1px;
+          transform: rotate(45deg);
+        }
+        &::after {
+          top: 2px;
+          right: -1px;
+          transform: rotate(-45deg);
+        }
+    }
+}
+    
+
+
