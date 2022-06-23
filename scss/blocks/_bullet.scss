@@ -10,6 +10,7 @@
   background-position: top;
   padding: 25px 47px 25px 27px;
   transition: all 1s ease;
+  z-index: 10;
     &--active {
       bottom: 0;
     }
